@@ -1,15 +1,16 @@
-# assignments-ai
+# GitHub User Info App
 
-This is a simple Python script that uses the GitHub API (via PyGithub) to fetch basic information about a GitHub user.
+This project uses the PyGithub library to connect to the GitHub API and display user information.
 
-## What it does
+## Features
 
-Given a GitHub username, the script returns:
-- Name  
-- Number of followers  
-- Number of public repositories  
+- Connects to GitHub using a Personal Access Token
+- Displays the authenticated username
+- Lists the first 5 repositories of the user
 
 ## Requirements
+
+Install the required library:
 
 ```bash
 pip install PyGithub
