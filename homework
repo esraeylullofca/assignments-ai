@@ -1,0 +1,18 @@
+from github import Github
+
+client = Github("GITHUB_TOKEN")
+
+def github_response(username):
+    user = client.get_user(username)
+
+    return f"""
+Name: {user.name}
+Followers: {user.followers}
+Public Repos: {user.public_repos}
+"""
+
+prompt = "torvalds"
+
+response = github_response(prompt)
+
+print(response)
