@@ -1,18 +1,13 @@
 from github import Github
 
-client = Github("GITHUB_TOKEN")
+g = Github("YOUR_GITHUB_TOKEN")
 
-def github_response(username):
-    user = client.get_user(username)
+def github_info():
+    user = g.get_user()
 
-    return f"""
-Name: {user.name}
-Followers: {user.followers}
-Public Repos: {user.public_repos}
-"""
+    print("Username:", user.login)
 
-prompt = "torvalds"
+    for repo in user.get_repos()[:5]:
+        print("-", repo.name)
 
-response = github_response(prompt)
-
-print(response)
+github_info()
